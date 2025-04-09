@@ -2,6 +2,7 @@ import loboxLogo from './assets/lobox.svg'
 import reactLogo from './assets/react.svg'
 import './App.scss'
 import MultiSelect from './components/MultiSelect'
+import ThemeToggle from './components/ToggleTheme'
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
+      <ThemeToggle/>
       <h1>React Multi Select</h1>
       <MultiSelect/>
       <p className="read-the-docs">
