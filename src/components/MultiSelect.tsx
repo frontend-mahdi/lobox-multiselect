@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import "./MultiSelect.scss";
 import CloseIcon from "./icons/CloseIcon";
 import ArrowIcon from "./icons/ArrowIcon";
+import CheckIcon from "./icons/CheckIcon";
 
 const MultiSelect = () => {
   const [searchValue, setSearchValue] = useState<string>("");
@@ -103,7 +104,12 @@ const MultiSelect = () => {
                     className={`option ${isSelected ? "disabled" : ""}`}
                     onClick={() => handleOptionClick(option)}
                   >
+                    <span>
                     {option.label}
+                    </span>
+                    {
+                      isSelected && <CheckIcon/>
+                    }
                   </span>
                 );
               })
