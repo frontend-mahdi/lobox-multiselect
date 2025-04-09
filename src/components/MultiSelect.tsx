@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "./MultiSelect.scss";
 import ArrowDownIcon from "./../assets/icons/arrow-down.svg";
+import CloseIcon from "./../assets/icons/close.svg";
 
 const MultiSelect = () => {
   const [searchValue, setSearchValue] = useState<string>("");
@@ -118,12 +119,12 @@ const MultiSelect = () => {
         <div className="badges">
           {selectedOptions.map((opt) => (
             <span key={opt.value} className="badge">
-              {opt.label}
+              <span className="label"> {opt.label}</span>
               <button
                 onClick={() => handleRemove(opt.value)}
                 className="close-btn"
               >
-                ×
+                <img src={CloseIcon} alt="close icon" />
               </button>
             </span>
           ))}

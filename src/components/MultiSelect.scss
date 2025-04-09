@@ -91,30 +91,65 @@
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin-top: 8px;
+  margin: 8px auto;
   max-width: 300px;
-  margin: auto;
+}
 
-  .badge {
-    display: flex;
+.badge {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--badge-bg);
+  color: var(--text);
+  border-radius: 16px;
+  padding: 4px 8px 4px 12px;
+  font-size: 13px;
+  gap: 6px;
+  line-height: 1;
+  
+  span.label {
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px; /* Adjust as needed */
+  }
+
+  .close-btn {
+    display: inline-flex;
     align-items: center;
-    background-color: var(--badge-bg);
-    color: var(--text);
-    border-radius: 16px;
-    padding: 4px 8px;
-    font-size: 13px;
+    justify-content: center;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-light);
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
 
-    .close-btn {
-      margin-left: 6px;
-      background: none;
-      border: none;
-      font-size: 14px;
-      cursor: pointer;
-      color: var(--text-light);
-      line-height: 1;
+    img {
+      width: 10px; /* Slightly smaller than button */
+      height: 10px;
+      object-fit: contain;
+      transition: transform 0.2s ease;
+    }
 
-      &:hover {
-        color: red;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.08);
+
+      img {
+        transform: scale(1.1);
+        filter: brightness(0.7);
+      }
+    }
+
+    &:active {
+      background-color: rgba(0, 0, 0, 0.12);
+      
+      img {
+        transform: scale(0.95);
       }
     }
   }
