@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import "./MultiSelect.scss";
+import ArrowDownIcon from "./../assets/icons/arrow-down.svg";
 
 const MultiSelect = () => {
   const [searchValue, setSearchValue] = useState<string>("");
@@ -83,7 +84,9 @@ const MultiSelect = () => {
             onFocus={() => setIsOpen(true)}
             placeholder="Type and press Enter"
           />
-          <span className={`arrow ${isOpen ? "open" : ""}`}>▼</span>
+          <span className={`arrow ${isOpen ? "open" : ""}`}>
+            <img src={ArrowDownIcon} alt="arrow down icon" />
+          </span>
         </div>
 
         {isOpen && (
