@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "./MultiSelect.scss";
-import ArrowDownIcon from "./../assets/icons/arrow-down.svg";
-import CloseIcon from "./../assets/icons/close.svg";
+import CloseIcon from "./icons/CloseIcon";
+import ArrowIcon from "./icons/ArrowIcon";
 
 const MultiSelect = () => {
   const [searchValue, setSearchValue] = useState<string>("");
@@ -86,7 +86,7 @@ const MultiSelect = () => {
             placeholder="Type and press Enter"
           />
           <span className={`arrow ${isOpen ? "open" : ""}`}>
-            <img src={ArrowDownIcon} alt="arrow down icon" />
+            <ArrowIcon />
           </span>
         </div>
 
@@ -124,7 +124,7 @@ const MultiSelect = () => {
                 onClick={() => handleRemove(opt.value)}
                 className="close-btn"
               >
-                <img src={CloseIcon} alt="close icon" />
+                <CloseIcon />
               </button>
             </span>
           ))}
