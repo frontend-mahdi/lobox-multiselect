@@ -3,12 +3,10 @@
 }
 :root[data-theme="light"] {
   --badge-bg: #e0e0e0;
-  --text-light: #666;
 }
 
 :root[data-theme="dark"] {
   --badge-bg: #3d3d3d;
-  --text-light: #aaa;
 }
 
 .badges {
