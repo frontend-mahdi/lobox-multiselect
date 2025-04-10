@@ -1,6 +1,6 @@
 import { FC, useRef } from "react";
 import { InputPropsT } from "./Input.types";
-import ArrowIcon from "../../../icons/ArrowIcon";
+import ArrowIcon from "../../icons/ArrowIcon";
 import styles from "./Input.module.scss";
 
 const Input: FC<InputPropsT> = ({

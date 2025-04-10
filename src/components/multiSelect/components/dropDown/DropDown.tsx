@@ -1,5 +1,5 @@
 import { FC } from "react";
-import CheckIcon from "../../../icons/CheckIcon";
+import CheckIcon from "../../icons/CheckIcon";
 import { DropDownPropsT } from "./DropDown.types";
 import styles from "./DropDown.module.scss";
 

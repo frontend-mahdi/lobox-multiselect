@@ -1,4 +1,4 @@
-import { OptionT } from "../../../../types";
+import { OptionT } from "../../MultiSelect.types";
 
 export type DropDownPropsT = {
   options: OptionT[];

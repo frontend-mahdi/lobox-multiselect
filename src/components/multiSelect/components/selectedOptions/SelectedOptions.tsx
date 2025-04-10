@@ -1,5 +1,5 @@
 import { FC } from "react";
-import CloseIcon from "../../../icons/CloseIcon";
+import CloseIcon from "../../icons/CloseIcon";
 import styles from "./SelectedOptions.module.scss";
 import { SelectedOptionsPropsT } from "./SelectedOptions.types";
 
