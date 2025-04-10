@@ -1,0 +1,32 @@
+.multi_select {
+  position: relative;
+  max-width: 300px;
+  margin: auto;
+  font-family: inherit;
+}
+
+
+:root[data-theme="light"] {
+    --input-bg: #ffffff;
+    --dropdown-bg: #ffffff;
+    --option-bg: #f9f9f9;
+    --hover: #e0e0e0;
+    --selected-option-bg: #f2f4ff;
+    --badge-bg: #e0e0e0;
+    --text: #222;
+    --text-light: #666;
+    --border: #ccc;
+  }
+  
+  :root[data-theme="dark"] {
+    --input-bg: #1e1e1e;
+    --dropdown-bg: #2a2a2a;
+    --option-bg: #3a3a3a;
+    --hover: #444;
+    --selected-option-bg: #555;
+    --badge-bg: #3d3d3d;
+    --text: #f5f5f5;
+    --text-light: #aaa;
+    --border: #555;
+  }
+  

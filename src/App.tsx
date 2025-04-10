@@ -1,11 +1,10 @@
-import loboxLogo from './assets/lobox.svg'
-import reactLogo from './assets/react.svg'
-import './App.scss'
-import MultiSelect from './components/MultiSelect'
-import ThemeToggle from './components/ToggleTheme'
+import loboxLogo from "./assets/lobox.svg";
+import reactLogo from "./assets/react.svg";
+import "./App.scss";
+import ThemeToggle from "./components/themeToggle";
+import MultiSelect from "./components/multiSelect";
 
 function App() {
-
   return (
     <>
       <div>
@@ -16,14 +15,14 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <ThemeToggle/>
+      <ThemeToggle />
       <h1>React Multi Select</h1>
-      <MultiSelect/>
+      <MultiSelect />
       <p className="read-the-docs">
         Click on the Lobox and React logos to learn more
       </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

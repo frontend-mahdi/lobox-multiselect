@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import "./MultiSelect.scss";
-import SelectedOptions from "./selectedOptions";
-import DropDown from "./dropDown";
-import Input from "./input";
+import styles from "./MultiSelect.module.scss";
+import Input from "./components/input";
+import DropDown from "./components/dropDown";
+import SelectedOptions from "./components/selectedOptions";
 
 const MultiSelect = () => {
   const [searchValue, setSearchValue] = useState<string>("");
@@ -71,7 +71,7 @@ const MultiSelect = () => {
 
   return (
     <>
-      <div className="multi-select" ref={containerRef}>
+      <div className={styles.multi_select} ref={containerRef}>
         <Input
           searchValue={searchValue}
           setSearchValue={setSearchValue}
