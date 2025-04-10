@@ -1,8 +1,4 @@
 :root[data-theme="light"] {
-  --input-bg: #ffffff;
-  --dropdown-bg: #ffffff;
-  --option-bg: #f9f9f9;
-  --hover: #e0e0e0;
   --disabled: #f0f0f0;
   --badge-bg: #e0e0e0;
   --text: #213547;
@@ -14,10 +10,6 @@
 }
 
 :root[data-theme="dark"] {
-  --input-bg: #1a1a1a;
-  --dropdown-bg: #242424;
-  --option-bg: #2f2f2f;
-  --hover: #444;
   --disabled: #555;
   --badge-bg: #3d3d3d;
   --text: rgba(255, 255, 255, 0.87);
