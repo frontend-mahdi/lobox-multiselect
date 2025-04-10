@@ -1,4 +1,4 @@
-export interface Option {
-  id: string;
+export interface OptionT {
   label: string;
+  value: string | number;
 }

@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import "./MultiSelect.scss";
-import CloseIcon from "./icons/CloseIcon";
-import ArrowIcon from "./icons/ArrowIcon";
-import CheckIcon from "./icons/CheckIcon";
+import SelectedOptions from "./selectedOptions";
+import DropDown from "./dropDown";
+import Input from "./input";
 
 const MultiSelect = () => {
   const [searchValue, setSearchValue] = useState<string>("");
@@ -15,7 +15,6 @@ const MultiSelect = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const containerRef = useRef<HTMLDivElement>(null);
-  const inputRef = useRef<HTMLInputElement>(null);
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter" && searchValue.trim() !== "") {
@@ -73,69 +72,26 @@ const MultiSelect = () => {
   return (
     <>
       <div className="multi-select" ref={containerRef}>
-        <div
-          className="input-wrapper"
-          onClick={() => inputRef.current?.focus()}
-        >
-          <input
-            ref={inputRef}
-            type="text"
-            value={searchValue}
-            onChange={(e) => setSearchValue(e.target.value)}
-            onKeyDown={handleKeyDown}
-            onFocus={() => setIsOpen(true)}
-            placeholder="Type and press Enter"
-          />
-          <span className={`arrow ${isOpen ? "open" : ""}`}>
-            <ArrowIcon />
-          </span>
-        </div>
+        <Input
+          searchValue={searchValue}
+          setSearchValue={setSearchValue}
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+          handleKeyDown={handleKeyDown}
+        />
 
         {isOpen && (
-          <div className="dropdown">
-            {options.length > 0 ? (
-              options.map((option) => {
-                const isSelected = selectedOptions.some(
-                  (s) => s.value === option.value
-                );
-                return (
-                  <span
-                    key={option.value}
-                    className={`option ${isSelected ? "disabled" : ""}`}
-                    onClick={() => handleOptionClick(option)}
-                  >
-                    <span>
-                    {option.label}
-                    </span>
-                    {
-                      isSelected && <CheckIcon/>
-                    }
-                  </span>
-                );
-              })
-            ) : (
-              <span className="placeholder">
-                Type and press enter to add new option!
-              </span>
-            )}
-          </div>
+          <DropDown
+            options={options}
+            selectedOptions={selectedOptions}
+            handleOptionClick={handleOptionClick}
+          />
         )}
       </div>
-      {selectedOptions.length > 0 && (
-        <div className="badges">
-          {selectedOptions.map((opt) => (
-            <span key={opt.value} className="badge">
-              <span className="label"> {opt.label}</span>
-              <button
-                onClick={() => handleRemove(opt.value)}
-                className="close-btn"
-              >
-                <CloseIcon />
-              </button>
-            </span>
-          ))}
-        </div>
-      )}
+      <SelectedOptions
+        selectedOptions={selectedOptions}
+        handleRemove={handleRemove}
+      />
     </>
   );
 };
