@@ -30,3 +30,23 @@ yarn
 ```bash
 yarn run dev
 ```
+
+
+## 📝 TODO
+
+- 🎨 **Style Customization**  
+  Allow users to customize styles for each UI element (input, dropdown, chips, etc.) via props or CSS variables.
+
+- ✅ **Custom Icons & Behavior**  
+  Make `checkedIcon` customizable or allow disabling it entirely for a cleaner look.
+
+- 🎞️ **Add/Delete Animations**  
+  Add animation effects for when options are added to or removed from the selection list.
+
+- 📚 **JSDoc Comments**  
+  Add complete JSDoc comments for public-facing hooks, components, and utility functions to improve DX.
+
+- 🧩 **Fix Layout Shift**  
+  Resolve layout shift in the `selectedOptions` container when items are added/removed.
+
+---
