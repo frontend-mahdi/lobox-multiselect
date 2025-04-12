@@ -3,8 +3,12 @@ import reactLogo from "./assets/react.svg";
 import "./App.scss";
 import ThemeToggle from "./components/themeToggle";
 import MultiSelect from "./components/multiSelect";
+import { useState } from "react";
+import { OptionT } from "./components/multiSelect/MultiSelect.types";
 
 function App() {
+  const [selected, setSelected] = useState<OptionT[]>([]);
+
   return (
     <>
       <div>
@@ -17,7 +21,7 @@ function App() {
       </div>
       <ThemeToggle />
       <h1>React Multi Select</h1>
-      <MultiSelect />
+      <MultiSelect value={selected} onChange={setSelected} />
       <p className="read-the-docs">
         Click on the Lobox and React logos to learn more
       </p>

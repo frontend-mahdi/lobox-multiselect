@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { OptionT } from "../MultiSelect.types";
 
-const useMultiSelect = () => {
+const useMultiSelect = ({ defaultOptions }: { defaultOptions?: OptionT[] }) => {
   const [searchValue, setSearchValue] = useState("");
-  const [options, setOptions] = useState<OptionT[]>([]);
+  const [options, setOptions] = useState<OptionT[]>(defaultOptions || []);
   const [selectedOptions, setSelectedOptions] = useState<OptionT[]>([]);
   const [isOpen, setIsOpen] = useState(false);
 

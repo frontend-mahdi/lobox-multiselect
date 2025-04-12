@@ -9,6 +9,7 @@ const Input: FC<InputPropsT> = ({
   handleKeyDown,
   isOpen,
   setIsOpen,
+  placeholder = "Type and press Enter",
 }) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -25,7 +26,7 @@ const Input: FC<InputPropsT> = ({
         onKeyDown={handleKeyDown}
         onFocus={() => setIsOpen(true)}
         className={styles.input}
-        placeholder="Type and press Enter"
+        placeholder={placeholder}
       />
       <span className={`${styles.arrow} ${isOpen ? styles.open : ""}`}>
         <ArrowIcon />

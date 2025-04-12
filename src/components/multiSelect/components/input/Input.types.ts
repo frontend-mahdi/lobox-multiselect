@@ -4,4 +4,5 @@ export type InputPropsT = {
   handleKeyDown: (e: React.KeyboardEvent<HTMLInputElement>) => void;
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  placeholder?: string;
 };

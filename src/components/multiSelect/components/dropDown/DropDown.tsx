@@ -7,6 +7,7 @@ const DropDown: FC<DropDownPropsT> = ({
   options,
   selectedOptions,
   handleOptionClick,
+  noOptionsText = "Type and press enter to add new option!",
 }) => {
   return (
     <div className={styles.dropdown}>
@@ -18,7 +19,9 @@ const DropDown: FC<DropDownPropsT> = ({
           return (
             <span
               key={option.value}
-              className={`${styles.option} ${isSelected ? styles.option_selected : ""}`}
+              className={`${styles.option} ${
+                isSelected ? styles.option_selected : ""
+              }`}
               onClick={() => handleOptionClick(option)}
             >
               <span>{option.label}</span>
@@ -27,9 +30,7 @@ const DropDown: FC<DropDownPropsT> = ({
           );
         })
       ) : (
-        <span className={styles.placeholder}>
-          Type and press enter to add new option!
-        </span>
+        <span className={styles.placeholder}>{noOptionsText}</span>
       )}
     </div>
   );
